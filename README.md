@@ -1,5 +1,3 @@
-# F-B-communication notes
-
 > ## 前言
 > 实现前后端交互，涉及到的技术栈及软件： *VUE3*、*php7*、*axios*、*MySQL*、*Navicate lite*、*VScode*、*postman*.
 
