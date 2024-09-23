@@ -1,5 +1,5 @@
 > ## 前言
-> 实现前后端交互，涉及到的技术栈及软件： *VUE3*、*php7*、*axios*、*MySQL*、*Navicate lite*、*VScode*、*postman*.
+> 实现前后端交互，涉及到的技术栈及软件： **Vue 3（前端框架）、PHP 7（后端语言）、Axios（HTTP 客户端）、MySQL（数据库）、Navicat Lite（数据库管理工具）、VSCode（代码编辑器）、Postman（API 测试工具）。**
 
 # 开始
 
