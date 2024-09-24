@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');  // 允许任何来源
-header('Access-Control-Allow-Methods: GET, POST');  // 允许 GET 和 POST 方法
+header('Access-Control-Allow-Methods: GET, POST, DELETE');  // 允许 GET、POST 和 DELETE 方法
 header('Access-Control-Allow-Headers: Content-Type');  // 允许特定的请求头
 require 'db.php';
 
@@ -24,4 +24,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     echo json_encode(['message' => 'User created successfully']);
 }
+
+// 删除用户
+if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
+    $data = json_decode(file_get_contents("php://input"));
+    $id = $data->id; // 获取要删除的用户 ID
+
+    $stmt = $pdo->prepare("DELETE FROM users WHERE id = ?");
+    $stmt->execute([$id]);
+
+    echo json_encode(['message' => 'User deleted successfully']);
+}
+
 ?>
