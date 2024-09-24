@@ -4,6 +4,7 @@
         <ul>
             <li v-for="user in users" :key="user.id">
                 {{ user.username }} - {{ user.email }}
+                <button @click="removeUser(user.id)">Delete</button> <!-- 添加删除按钮 -->
             </li>
         </ul>
         <h2>Add User</h2>
@@ -15,7 +16,7 @@
 </template>
 
 <script>
-import { getUsers, createUser } from '../seevices/api';
+import { getUsers, createUser, deleteUser } from '../services/api';
 
 export default {
     data() {
@@ -39,11 +40,17 @@ export default {
             try {
                 await createUser(this.newUser);
                 await this.fetchUsers();
-                this.newUser.username = '';
-                this.newUser.password = '';
-                this.newUser.email = '';
+                this.newUser = { username: '', password: '', email: '' }; // 清空输入框
             } catch (error) {
                 console.error('Error adding user:', error);
+            }
+        },
+        async removeUser(id) {
+            try {
+                await deleteUser(id);
+                await this.fetchUsers(); // 重新获取用户列表
+            } catch (error) {
+                console.error('Error deleting user:', error);
             }
         }
     }
