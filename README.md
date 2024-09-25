@@ -215,6 +215,7 @@ export default {
 
 ## 日期：2024.9.24
  Q:假设后期要添加新组件，新功能，新页面，应该修改或者增加哪些代码文件？
- A:1. 新建.vue组件文件
-   2. 更新路由配置：在router/index.js 中的routes数组内配置该组件的路由
-   3. 更改APP.vue 中的视图模板 （~~router-link to相关~~）
+ A:
+  1. 新建.vue组件文件
+  2. 更新路由配置：在router/index.js 中的routes数组内配置该组件的路由
+  3. 更改APP.vue 中的视图模板 （~~router-link to相关~~）
